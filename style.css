@@ -6,102 +6,105 @@ body {
     margin: 0;
 }
 
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 20px;
-background:#111;
-color:white;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #111;
+    color: white;
+    position: relative;
+    z-index: 1000;
 }
 
-.menuBtn{
-font-size:24px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
+.menuBtn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
-.menu{
-position:absolute;
-top:60px;
-right:20px;
-background:#1f2937;
-padding:15px;
-border-radius:10px;
-display:none;
-flex-direction:column;
-gap:10px;
-width:180px;
-box-shadow:0 10px 20px rgba(0,0,0,0.4);
+.menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1f2937;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 180px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
 }
 
-.menu button{
-padding:8px;
-border:none;
-border-radius:6px;
-background:#16a34a;
-color:white;
-cursor:pointer;
+.menu button {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #16a34a;
+    color: white;
+    cursor: pointer;
 }
 
-.menu button:hover{
-background:#15803d;
+.menu button:hover {
+    background: #15803d;
 }
 
-.menu hr{
-border:0;
-border-top:1px solid #444;
+.menu hr {
+    border: 0;
+    border-top: 1px solid #444;
 }
 
-footer{
-margin-top:40px;
-padding:15px;
-text-align:center;
-font-size:14px;
-color:#aaa;
-border-top:1px solid #333;
-}   
-
-.panel{
-display:flex;
-gap:20px;
-justify-content:center;
-margin:10px;
-font-weight:bold;
-font-size:18px;
+footer {
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    border-top: 1px solid #333;
 }
 
-.barraProgreso{
-width:80%;
-height:14px;
-background:#2b2b2b;
-border-radius:10px;
-margin:10px auto;
-overflow:hidden;
+.panel {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-#progreso{
-height:100%;
-width:0%;
-background:#22c55e;
-transition:width 0.3s;
+.barraProgreso {
+    width: 80%;
+    height: 14px;
+    background: #2b2b2b;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
-#porcentaje{
-text-align:center;
-font-size:14px;
-color:#aaa;
-margin-bottom:10px;
+#progreso {
+    height: 100%;
+    width: 0%;
+    background: #22c55e;
+    transition: width 0.3s;
+}
+
+#porcentaje {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
 }
 
 h1 {
     background: #dc2626;
     padding: 15px;
     margin: 0;
-    text-align:center;
-    width:100%;
+    text-align: center;
+    width: 100%;
 }
 
 #buscador {
@@ -182,8 +185,8 @@ button {
     color: white;
 }
 
-button.activo:not(.shiny):not(.perfect){
-outline:3px solid yellow;
+button.activo:not(.shiny):not(.perfect) {
+    outline: 3px solid yellow;
 }
 
 .card.capturado {
@@ -399,6 +402,35 @@ outline:3px solid yellow;
 
     vertical-align: middle;
 }
+
 .card {
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .lista {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        padding: 6px;
+    }
+
+    .card {
+        padding: 5px;
+        min-width: 0;
+    }
+
+    .card img {
+        width: 70px;
+        max-width: 100%;
+    }
+
+    .nombre {
+        font-size: 12px;
+    }
+
+    .card button {
+        font-size: 10px;
+        padding: 4px;
+        margin: 2px;
+    }
 }
