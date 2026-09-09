@@ -1,0 +1,404 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+background:#111;
+color:white;
+}
+
+.menuBtn{
+font-size:24px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.menu{
+position:absolute;
+top:60px;
+right:20px;
+background:#1f2937;
+padding:15px;
+border-radius:10px;
+display:none;
+flex-direction:column;
+gap:10px;
+width:180px;
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+.menu button{
+padding:8px;
+border:none;
+border-radius:6px;
+background:#16a34a;
+color:white;
+cursor:pointer;
+}
+
+.menu button:hover{
+background:#15803d;
+}
+
+.menu hr{
+border:0;
+border-top:1px solid #444;
+}
+
+footer{
+margin-top:40px;
+padding:15px;
+text-align:center;
+font-size:14px;
+color:#aaa;
+border-top:1px solid #333;
+}   
+
+.panel{
+display:flex;
+gap:20px;
+justify-content:center;
+margin:10px;
+font-weight:bold;
+font-size:18px;
+}
+
+.barraProgreso{
+width:80%;
+height:14px;
+background:#2b2b2b;
+border-radius:10px;
+margin:10px auto;
+overflow:hidden;
+}
+
+#progreso{
+height:100%;
+width:0%;
+background:#22c55e;
+transition:width 0.3s;
+}
+
+#porcentaje{
+text-align:center;
+font-size:14px;
+color:#aaa;
+margin-bottom:10px;
+}
+
+h1 {
+    background: #dc2626;
+    padding: 15px;
+    margin: 0;
+    text-align:center;
+    width:100%;
+}
+
+#buscador {
+    margin: 15px;
+    padding: 10px;
+    width: 220px;
+    border-radius: 8px;
+    border: none;
+}
+
+#contador {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#contadorShiny {
+    font-size: 16px;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+#barra {
+    width: 300px;
+    height: 20px;
+    background: #334155;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progreso {
+    height: 100%;
+    width: 0%;
+    background: #22c55e;
+    transition: 0.3s;
+}
+
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.25s ease;
+    position: relative;
+}
+
+.card img {
+    width: 120px;
+}
+
+.nombre {
+    margin: 10px 0;
+}
+
+button {
+    border: none;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.si {
+    background: #22c55e;
+    color: white;
+}
+
+.no {
+    background: #ef4444;
+    color: white;
+}
+
+button.activo:not(.shiny):not(.perfect){
+outline:3px solid yellow;
+}
+
+.card.capturado {
+    background: #14532d;
+    border: 2px solid #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+/* ⭐ SHINY */
+
+.shiny {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 0, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shiny.activo {
+    color: #ffd700;
+    text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffd700,
+        0 0 20px #ffea00,
+        0 0 40px #ffea00;
+}
+
+/* 💯 PERFECT */
+
+.perfect {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    /* estado normal */
+    color: rgba(255, 0, 0, 0.35);
+}
+
+.perfect:hover {
+    color: rgba(255, 0, 0, 0.6);
+}
+
+.perfect.activo {
+    color: #ff2a2a;
+    text-shadow:
+        0 0 5px #ff2a2a,
+        0 0 10px #ff2a2a,
+        0 0 18px #ff0000;
+}
+
+.perfect.activo {
+    color: #ff2a2a;
+    text-shadow:
+        0 0 5px #ff2a2a,
+        0 0 10px #ff2a2a,
+        0 0 18px #ff0000;
+}
+
+/* ✨ destello */
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: destello 0.6s forwards;
+}
+
+
+
+@keyframes destello {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(6);
+    }
+}
+
+
+/* NOMBRE DEL POKÉMON */
+.nombre {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 8px 0 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
+}
+
+
+/* CAJA DE MOVIMIENTOS */
+.movimientos {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin: 4px 0 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* CADA MOVIMIENTO */
+.movimiento {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px 6px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 7px;
+}
+
+
+/* "RÁPIDO", "CARGADO", ETC. */
+.tipo-movimiento {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.65;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+
+/* NOMBRE DEL ATAQUE */
+.nombre-movimiento {
+    width: 100%;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.15;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* SEGUNDO ATAQUE */
+.movimiento.segundo {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* ALTERNATIVA */
+.movimiento.segundo .tipo-movimiento {
+    font-size: 0.62rem;
+}
+
+.nombre-movimiento.legacy {
+    background: rgba(255, 170, 0, 0.18);
+    border: 1px solid rgba(255, 170, 0, 0.55);
+    color: #ffd166;
+    border-radius: 6px;
+    padding: 4px 6px;
+}
+
+.nombre-movimiento.legacy small {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ffb703;
+}
+
+.card .si,
+.card .no {
+    display: inline-flex !important;
+
+    width: 45px !important;
+    height: 28px !important;
+
+    padding: 0 !important;
+    margin: 5px 2px !important;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    line-height: normal;
+
+    vertical-align: middle;
+}
+.card {
+    text-align: center;
+}

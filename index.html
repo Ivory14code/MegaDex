@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MegaDex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/safari-ball.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#16a34a">
+</head>
+
+<body>
+    <header class="header">
+
+        <h1>MEGADEX</h1>
+
+        <button id="menuBtn" class="menuBtn">☰</button>
+
+        <nav id="menu" class="menu">
+
+            <button id="exportar">Exportar progreso</button>
+            <button id="importar">Importar progreso</button>
+
+            <hr>
+
+            <button id="filtroShiny">⭐ Solo shiny</button>
+            <button id="filtroPerfect">💯 Solo 100</button>
+
+            <hr>
+
+            <button id="resetear">Resetear MegaDex</button>
+
+            <input type="file" id="archivoImportar" style="display:none">
+
+        </nav>
+
+    </header>
+
+    <div class="panel">
+        <div id="contadorTotal">0</div>
+        <div id="contadorShiny">⭐ 0</div>
+        <div id="contadorPerfect">💯 0</div>
+    </div>
+
+    <div class="barraProgreso">
+        <div id="progreso"></div>
+    </div>
+    <div id="porcentaje">0%</div>
+
+    <input type="file" id="archivoImportar" style="display:none">
+
+    <input id="buscador" placeholder="Buscar Pokémon">
+
+    <div class="lista" id="lista"></div>
+
+    <footer>
+        © 2026 Ivory — MegaDex Checker — Derechos Reservados
+    </footer>
+
+    <script src="movimientos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
